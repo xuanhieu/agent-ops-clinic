@@ -1,0 +1,15 @@
+# Generated evidence and local server output are not source artifacts.
+render-check/
+*.log
+.DS_Store
+
+# Keep private data out of any future public release
+.env
+.env.*
+node_modules/
+*.pem
+*.key
+*.p12
+*.sqlite
+.cache/
+dist/

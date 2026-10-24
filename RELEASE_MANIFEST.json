@@ -1,0 +1,28 @@
+{
+  "project": "agent-ops-clinic",
+  "generated_on": "2026-10-24",
+  "owner_review_required_before_github_publication": true,
+  "source_commit": "7c1ecdf6f3cfa805e7d8043d4932dba53e6916e5",
+  "files": {
+    ".gitignore": "d6e4a5e8f2d40c54f6183a49bb5302d20254c1d07d84fb7c5a9075e2a7cb971b",
+    "CONTRIBUTING.md": "5c594b5063ce12ebef13bbc093ffe3f6f075b0206939316f3421f5624c2a7e36",
+    "LICENSE": "bbbe2b8c2214eec8c75ca2f52c21f9528709832c172a6d26fcaf75469f9d795f",
+    "PROVENANCE_PUBLIC.md": "5266c99a2faecb634b84a04892a215568864499929852604030e59d43f78f9a5",
+    "README.md": "a077a3328b7427010077733f3d342753d37030381bfc3564fe819d24a18e657e",
+    "README.vi.md": "78ed65478486f1af494cf95468ab0f215d0d58e156d9fe5116801658008aac1e",
+    "SECURITY.md": "2ac5e5bf0c366975ef2a0ddd29a8d772e12feebdb25f184f87f9ed8ffa5c69b9",
+    "app.js": "9fcde4e0058c704408f5ca916b4cbeeb127b301b28de7b55e1caf11b8a660a4d",
+    "assets/desktop.png": "7367d334c694cb819a9ae7b54e20954a3fe16747458f2b400b44ee29d567bcdd",
+    "assets/mobile.png": "3986e59f8a4f67bc8c834075d342b3bd9ac65e25da33c0f0d2e1e91e01f94418",
+    "domain.js": "4410c84f93feae0390d88323b29f8210ed615194979482bd788ca8d992718712",
+    "favicon.svg": "ab69264184d222b5ea197e54fed9545b35fd3a95bd1d50393ef6042df8f17c8e",
+    "i18n.js": "15d34b202438287bbf8e13614c6c276270f8c3496d0808459a4d9d7372c161aa",
+    "index.html": "3c67c772b67b67d8b866b2f606c2f8d1c622322b56667d504d1b04d23407790f",
+    "package.json": "8ccb7c06305d03a8cfda59a0bd5a413fc8ba136a9cf7a4904ba89f0d75d237e5",
+    "samples.js": "2e406993756bc31f8ebb59716d413f693d42a4afe63acefcfba8255c7142a4f4",
+    "scripts/smoke.mjs": "adce5479f8bc2cd986c87cbf269e130b7696d0df21ccc79ad7da35e4655e2b3b",
+    "styles.css": "95b37bfa7e37027c7da3439a6eeba64fc25f9f22f9e98a819d2f592f70ad65d6",
+    "tests/domain.test.js": "31b6c82c375199b932909c9d3b9c225634e4ec72b6d1936353f8425e6e0e6b04"
+  },
+  "purpose": "Source review package; no private Git/evidence logs, credentials or secrets"
+}
