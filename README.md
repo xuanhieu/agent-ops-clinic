@@ -2,7 +2,7 @@
 
 A local-first, bilingual English/Vietnamese training lab for founders and community builders. Practice delegating software work while keeping human approval, a decision trail and a spend cap. Intended for a **20-minute, hands-on community workshop**.
 
-Built with **OpenAI Codex CLI under the user's direction** for a public, reproducible educational demonstration supporting an OpenAI Codex Ambassador application. No OpenAI affiliation, endorsement, acceptance or approval is implied. The application is an authored simulation, not an integration with Codex or a multi-agent runtime.
+Built with **OpenAI Codex CLI under the author's direction**. Independent project; no OpenAI affiliation or endorsement. The application is an authored simulation, not an integration with Codex or a multi-agent runtime.
 
 All organizations, people, task material and costs are fictional. No API calls, AI execution, security scans, payments, messages or external publishing occur. No accounts, keys, libraries, downloads or paid services are needed.
 
@@ -33,7 +33,7 @@ Optional equivalent npm commands: `npm test` and `npm run smoke`. They install n
 
 **Verified on 2026-10-23:** Node v24.21.0; **36 tests passed, 0 failed**. The independent smoke script passed **3 complete scenario flows** plus entry-asset checks. JavaScript syntax checks passed. No fabricated screenshots or performance measurements are included.
 
-The initial build sandbox on 2026-10-23 could not launch Chrome and did not claim visual verification at that time. **Subsequent verification on 2026-10-24:** the actual Chrome CDP rendered the interactive workshop at 390×844, 768×900 and 1440×900, with no horizontal overflow or uncaught JS error; 15 interactive smoke checks passed (scenario selection, budget, VI language, lesson, human review). 36/36 Node tests and three complete deterministic scenario smoke flows were re-run successfully. Screenshots captured under `agents/BR-20261024-PARALLEL/qa-screenshots/O001-*.png` in the development workspace. No manual VoiceOver/WCAG conformance claim or genuine live agent execution is implied.
+The initial build sandbox on 2026-10-23 could not launch Chrome and did not claim visual verification at that time. **Subsequent verification on 2026-10-24:** the actual Chrome CDP rendered the interactive workshop at 390×844, 768×900 and 1440×900, with no horizontal overflow or uncaught JS error; 15 interactive smoke checks passed (scenario selection, budget, VI language, lesson, human review). 36/36 Node tests and three complete deterministic scenario smoke flows were re-run successfully. Screenshots are kept in the maintainer's private QA workspace. No manual VoiceOver/WCAG conformance claim or genuine live agent execution is implied.
 
 ## What participants can do
 
@@ -77,6 +77,34 @@ Facilitator prompts and answer key:
 - **18–20 phút:** tìm quyết định trong bản xuất; nêu việc có thể giao, bằng chứng cần nhận và người có quyền phát hành.
 
 Đáp án trọng tâm: tiêu chí nghiệm thu phải kiểm chứng được; tác nhân không thay con người đồng ý; chỉnh sửa làm mất hiệu lực phê duyệt cũ; phê duyệt không vượt quyền ngân sách. Chi phí, tác nhân, xử lý rủi ro và phát hành ở đây đều là mô phỏng.
+
+## Try it with Codex / Thử với Codex
+
+The app only simulates agents. This exercise uses the real Codex CLI on this repository's real files. Work on a fresh clone or a throwaway branch, and run everything from the repository root (the folder that contains `index.html`).
+
+1. Start Codex in the repository root: `codex`
+2. Paste this prompt:
+
+```text
+Read domain.js and tests/domain.test.js. Add ONE new node:test case to tests/domain.test.js for the budget gate: take the launch-invite task through human review with the existing reviewed() helper, lower the cap with set_budget to 100 cents, then raise it back to exactly estimateCents(state). Assert that canPublish is false at 100 cents, true again at the estimate, and that reviewApproved stays true throughout. Reuse the existing helpers (make, act, reviewed). Do not change domain.js or any other file. Run `node --test`, then show me the diff and explain each assertion in one or two sentences.
+```
+
+3. Check the result yourself:
+
+```sh
+node --test
+git diff --stat
+```
+
+A good result: `node --test` reports 37 tests, 37 pass, 0 fail (36 before the change); `git diff --stat` lists only `tests/domain.test.js`; the new test asserts both cap values; and the explanation matches the rule "approval does not override budget". If Codex edits `domain.js`, or the test only checks one cap, reject the change and ask again.
+
+**Tiếng Việt.** Mở `codex` ở thư mục gốc của repo rồi dán prompt sau:
+
+```text
+Đọc domain.js và tests/domain.test.js. Thêm MỘT test node:test mới vào tests/domain.test.js cho cổng ngân sách: đưa việc launch-invite qua bước người duyệt bằng helper reviewed() có sẵn, dùng set_budget hạ giới hạn xuống 100 cent, rồi nâng lại đúng bằng estimateCents(state). Kiểm tra canPublish là false ở mức 100 cent, true trở lại khi bằng ước tính, và reviewApproved luôn giữ là true. Dùng lại các helper có sẵn (make, act, reviewed). Không sửa domain.js hay bất kỳ file nào khác. Chạy `node --test`, sau đó cho tôi xem diff và giải thích từng assert trong một hai câu.
+```
+
+Kiểm tra bằng `node --test` và `git diff --stat`. Kết quả tốt: 37/37 test đạt (trước đó là 36), diff chỉ chạm vào `tests/domain.test.js`, và lời giải thích khớp với nguyên tắc "phê duyệt không vượt quyền ngân sách". Nếu Codex sửa `domain.js`, hãy từ chối thay đổi và yêu cầu làm lại.
 
 ## Architecture and contracts
 
