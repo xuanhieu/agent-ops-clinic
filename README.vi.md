@@ -6,7 +6,8 @@ Dự án giáo dục song ngữ được xây bằng **OpenAI Codex CLI** cho ch
 Cần Python 3 để mở máy chủ local (không cần đăng nhập, không cần API key):
 
 ```bash
-cd demos/agent-ops-clinic
+git clone https://github.com/xuanhieu/agent-ops-clinic
+cd agent-ops-clinic
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
@@ -16,12 +17,11 @@ Mở `http://127.0.0.1:4173` trong trình duyệt. Nhấn VI để đổi sang t
 Cần Node.js phiên bản có hỗ trợ `node --test`:
 
 ```bash
-cd demos/agent-ops-clinic
 node --test
 node scripts/smoke.mjs
 ```
 
-Đã chạy thực tế trên Mac mini vào 23/10/2026: 32/32 unit tests pass; 3/3 luồng smoke pass. Trên Chrome headless mô phỏng kích thước 390 và 1440 CSS px không có tràn ngang.
+Chạy các lệnh trên từ thư mục gốc của repo (thư mục chứa `index.html`). Kết quả kiểm lại ngày 29/10/2026: 36/36 unit test pass; 3/3 luồng smoke pass. Trên Chrome headless mô phỏng kích thước 390 và 1440 CSS px không có tràn ngang.
 
 ## Bài học thực hành 20 phút
 1. **Phút 0–3:** Giải thích khác biệt giữa agent tự đề xuất, người phê duyệt và hệ thống kiểm soát.

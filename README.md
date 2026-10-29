@@ -11,11 +11,12 @@ All organizations, people, task material and costs are fictional. No API calls, 
 Requirements: Python 3 for serving files; Node.js **22 or newer** for tests. No `npm install` or build step.
 
 ```sh
-cd demos/agent-ops-clinic  # from your cloned project checkout
+git clone https://github.com/xuanhieu/agent-ops-clinic
+cd agent-ops-clinic
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Open **http://127.0.0.1:4173**. This is Python's built-in `http.server` on port 4173, bound to loopback so the workshop is local. In another checkout, `cd` to that checkout's `demos/agent-ops-clinic` directory instead. Stop the server with **Ctrl+C** when finished. Serve the demo directory, not its parent or the repository root. Opening `index.html` through `file://` is unsupported because browsers restrict ES module imports.
+Open **http://127.0.0.1:4173**. This is Python's built-in `http.server` on port 4173, bound to loopback so the workshop is local. Run every command from the repository root, the folder that contains `index.html`. Stop the server with **Ctrl+C** when finished. Serve this folder, not its parent. Opening `index.html` through `file://` is unsupported because browsers restrict ES module imports.
 
 After the local server starts, the app needs no internet. It loads only the HTML, CSS, SVG and ES modules in this directory. It has no service worker or offline cache; keep the local server running during use. A restrictive Content Security Policy prohibits fetch/WebSocket connections, external assets, plugins and form destinations. Browser extensions and unrelated browser traffic are outside this promise.
 
@@ -143,6 +144,6 @@ Use a clean workshop; repeat the important path in EN and VI.
 - Added explicit human/risk approvals, revision invalidation, scenario-wide budget gates and immutable release snapshots.
 - Added local event replay, JSON export, reset, bilingual 20-minute lesson and inspectable fictional review material.
 - Added responsive, semantic, keyboard-oriented UI and documented browser-verification limits.
-- Validation: **36/36 Node tests passed; 3/3 scenario smoke flows passed; JavaScript syntax checks passed.** Browser/manual acceptance remains unverified in this sandbox.
+- Validation: **36/36 Node tests passed; 3/3 scenario smoke flows passed; JavaScript syntax checks passed.** The original build sandbox could not launch a browser; browser checks were run afterwards (2026-10-24 and 2026-10-29, see PROVENANCE_PUBLIC.md).
 
-Local commit attempt: `git add -- demos/agent-ops-clinic` was blocked because the execution sandbox makes `.git` read-only (`index.lock: Operation not permitted`). No commit was created, and no files outside the demo were staged. A maintainer can commit this directory from the repository root with `git add -- demos/agent-ops-clinic` followed by `git commit --only demos/agent-ops-clinic -m "feat(agent-ops-clinic): add bilingual delegation workshop"`. Nothing was pushed or published.
+Source history: the Codex-built work was first committed locally as `7c1ecdf` (2026-10-23) and published to this repository on 2026-10-24.

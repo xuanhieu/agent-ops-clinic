@@ -8,7 +8,8 @@ This is an independent educational tool created as a genuinely logged local **Co
 - Three deterministic flows via `node scripts/smoke.mjs`: launch, community, creator; release gate and reset assertions PASS.
 - Browser CDP at 390×844, 768×900 and 1440×900: 15 real interaction smoke checks PASS, no horizontal overflow / uncaught JavaScript error.
 - Public runtime: https://codex.xuanhieu.org/demos/agent-ops-clinic/
-- Source is available locally for a **new isolated public Git repository only after explicit owner approval**. Do not infer a GitHub source repository already exists from the demo URL.
+- Public source: https://github.com/xuanhieu/agent-ops-clinic (published 2026-10-24, MIT).
+- Re-verified 2026-10-29: `node --test` → 36/36 PASS; Exercise 1 completed in headless Chrome on the live site (audit log shows the saved brief and the handoff to Plan).
 
 This app simulates cost and approval workflows without charging money, invoking Codex/other AI models, calling APIs or executing agent tasks. Its fictional examples should not be presented as real deployed work or real project metrics.
 
